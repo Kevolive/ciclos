@@ -70,53 +70,58 @@
 
 /* Simulación de un cajero electrónico 
 Desarrollar un algoritmo que permita simular el comportamiento de un cajero electrónico: consultar, consignar, retirar validado por un inicio de sesión
+
 */
 
 const usuario = prompt('Ingrese su usuario: ')
 if (usuario == 'jaime') {
-    const contrasena = Number(prompt('Ingrese su contraseña: '))
-    if (contrasena == 1234) {
-        console.log('Bienvenido: ' + usuario)
-        let repetir = true
-        let saldoCuenta = 0
-        let valorTransaccion = 0
-        while (repetir) {
-            let opcion = prompt('Seleccione\n1 - Consultar\n2 - Consignar\n3 - Retirar\n4 - Salir')
-            switch (opcion) {
-                case '1':
-                    console.log('Su saldo es: ' + saldoCuenta)
-                    break;
-                case '2':
-                    valorTransaccion = Number(prompt('Ingrese el valor a consignar'))
-                    console.log('Hizo una consignación de: ' + valorTransaccion)
-                    saldoCuenta += valorTransaccion
-                    console.log('Su nuevo saldo es: ' + valorTransaccion)
-                    break;
-                case '3':
-                    valorTransaccion = Number(prompt('¿Cuanto desea retirar?'))
-                    if (valorTransaccion > saldoCuenta) {
-                        console.log('Fondos Insuficientes')
-                    } else {
-                        console.log('Hizo un retiro: ' + valorTransaccion)
-                        saldoCuenta -= valorTransaccion
-                    }
-                    console.log('Su nuevo saldo es: ' + valorTransaccion)
-                    break;
-                case '4':
-                    repetir = false
-                    console.log('Salió del sistema')
-                    break;
-                default:
-                    console.log('No existe la opción')
-                    break
+    let intentos = 3;
+    while (intentos > 0) {
+        const contrasena = Number(prompt('Ingrese su contraseña: '))
+        if (contrasena == 1234) {
+            console.log('Bienvenido: ' + usuario)
+            let repetir = true
+            let saldoCuenta = 0
+            let valorTransaccion = 0
+            while (repetir) {
+                let opcion = prompt('Seleccione\n1 - Consultar\n2 - Consignar\n3 - Retirar\n4 - Salir')
+                switch (opcion) {
+                    case '1':
+                        console.log('Su saldo es: ' + saldoCuenta)
+                        break;
+                    case '2':
+                        valorTransaccion = Number(prompt('Ingrese el valor a consignar'))
+                        console.log('Hizo una consignación de: ' + valorTransaccion)
+                        saldoCuenta += valorTransaccion
+                        console.log('Su nuevo saldo es: ' + valorTransaccion)
+                        break;
+                    case '3':
+                        valorTransaccion = Number(prompt('¿Cuanto desea retirar?'))
+                        if (valorTransaccion > saldoCuenta) {
+                            console.log('Fondos Insuficientes')
+                        } else {
+                            console.log('Hizo un retiro: ' + valorTransaccion)
+                            saldoCuenta -= valorTransaccion
+                        }
+                        console.log('Su nuevo saldo es: ' + valorTransaccion)
+                        break;
+                    case '4':
+                        repetir = false
+                        console.log('Salió del sistema')
+                        break;
+                    default:
+                        console.log('No existe la opción')
+                        break
+                }
+            }
+        } else {
+            intentos--;
+            console.log('Contraseña incorrecta. Intentos restantes: ' + intentos);
+            if (intentos == 0) {
+                console.log('Ha superado el número de intentos permitidos. Bloqueando acceso.');
             }
         }
-    } else {
-        console.log('Contraseña incorrecta')
     }
 } else {
     console.log('Usuario no existe en la base de datos')
 }
-
-
-
