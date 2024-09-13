@@ -1,0 +1,33 @@
+Ciclos - Bucles - Loops - Estructuras de repetición
+Para (for)
+    -> Es una estructura que se utiliza cuando se sabe la cantidad de veces a repetir un bloque de código
+    -> Es un ciclo finito
+    -> Un cilo for se puede migrar a un ciclo mientras
+        -> varibale de inicio (iterador)
+        -> condición de iteración
+        -> incremento de la varibale de inicio (iterador)
+Mientras (while)
+    -> Es una estructura que se utiliza cuando se sabe y no se sabe la cantidad de veces a repetir un bloque de código
+    -> Es un ciclo que no puede migrar a un ciclo for
+    -> Se ejecuta si y solo si la expresión booleana es verdadera
+        -> varibale de inicio (iterador) -> Siempre se define por fuera del ciclo
+        -> condición de iteración
+        -> incremento de la varibale de inicio (iterador)
+        -> El ciclo mientras primero pregunta y luego ejecuta
+Repita (do-while)
+    -> Es una estructura que se utiliza cuando se sabe y no se sabe la cantidad de veces a repetir un bloque de código
+    -> Es un ciclo que no puede migrar a un ciclo for
+    -> Se garantiza siempre una ejecución del código
+
+Nota: la definición de contadores y/o acumuladores, siempre tendrá que ser por fuera del ciclo (menos el for con un contador)
+Operadores Unarios
+++ = Incremento de 1 en 1 = 1 + 1
+-- = Decremento de 1 en 1 = 1 - 1
+** = Producto de variable en varibale = 1 * n (es cualquier valor)
+Acumuladores
+    -> Un acmulador siempre se define por fuera del ciclo y se utiliza dentro del ciclo
+COntadores
+    -> Un contador define la cantidad de veces que se ejecuta algo. Normalmente está expresado por el operador unario ++. Un contador se define por fuera del ciclo o dentro del ciclo (for) y se utiliza dentro del ciclo
+
+
+Centinela - Bandera - Interruptor
