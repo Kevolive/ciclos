@@ -78,17 +78,30 @@ if (usuario == 'jaime') {
     if (contrasena == 1234) {
         console.log('Bienvenido: ' + usuario)
         let repetir = true
+        let saldoCuenta = 0
+        let valorConsignacion = 0
+        let valorRetiro = 0
         while (repetir) {
             let opcion = prompt('Seleccione\n1 - Consultar\n2 - Consignar\n3 - Retirar\n4 - Salir')
             switch (opcion) {
                 case '1':
-                    console.log('Su saldo es: ')
+                    console.log('Su saldo es: ' + saldoCuenta)
                     break;
                 case '2':
-                    console.log('Hizo una consignación a: ')
+                    valorConsignacion = Number(prompt('Ingrese el valor a consignar'))
+                    console.log('Hizo una consignación de: ' + valorConsignacion)
+                    saldoCuenta += valorConsignacion
+                    console.log('Su nuevo saldo es: ' + saldoCuenta)
                     break;
                 case '3':
-                    console.log('Hizo un retiro: ')
+                    valorRetiro = Number(prompt('¿Cuanto desea retirar?'))
+                    if (valorRetiro > saldoCuenta) {
+                        console.log('Fondos Insuficientes')
+                    } else {
+                        console.log('Hizo un retiro: ' + valorRetiro)
+                        saldoCuenta -= valorRetiro
+                    }
+                    console.log('Su nuevo saldo es: ' + saldoCuenta)
                     break;
                 case '4':
                     repetir = false
