@@ -72,7 +72,6 @@
 Desarrollar un algoritmo que permita simular el comportamiento de un cajero electrónico: consultar, consignar, retirar validado por un inicio de sesión
 
 */
-
 const usuario = prompt('Ingrese su usuario: ')
 if (usuario == 'jaime') {
     let intentos = 3;
@@ -111,7 +110,7 @@ if (usuario == 'jaime') {
                         break;
                     default:
                         console.log('No existe la opción')
-                        break
+                        break;
                 }
             }
         } else {
