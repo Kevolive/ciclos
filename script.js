@@ -92,7 +92,7 @@ if (usuario == 'jaime') {
                         valorTransaccion = Number(prompt('Ingrese el valor a consignar'))
                         console.log('Hizo una consignación de: ' + valorTransaccion)
                         saldoCuenta += valorTransaccion
-                        console.log('Su nuevo saldo es: ' + valorTransaccion)
+                        console.log('Su nuevo saldo es: ' + saldoCuenta)
                         break;
                     case '3':
                         valorTransaccion = Number(prompt('¿Cuanto desea retirar?'))
@@ -102,7 +102,7 @@ if (usuario == 'jaime') {
                             console.log('Hizo un retiro: ' + valorTransaccion)
                             saldoCuenta -= valorTransaccion
                         }
-                        console.log('Su nuevo saldo es: ' + valorTransaccion)
+                        console.log('Su nuevo saldo es: ' + saldoCuenta)
                         break;
                     case '4':
                         repetir = false

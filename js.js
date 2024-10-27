@@ -1,6 +1,6 @@
 const usuario = prompt('Ingrese el usuario: ')
 if (usuario=='kevin'){
-     
+    let intentos = 3;
 for (var index=0; index <3; index++){
 
 
@@ -22,7 +22,7 @@ for (var index=0; index <3; index++){
         case '2':
             valorTransaccion= Number(prompt('Ingrese el valor de la consignacion: '))
             console.log('Realizó una consignacion de: ' + valorTransaccion)
-            saldoCuenta+=valorTransaccion
+            saldoCuenta += valorTransaccion
             console.log('Su nuevo saldo es de: ' + saldoCuenta)
             
             break;
@@ -61,8 +61,14 @@ for (var index=0; index <3; index++){
  }
 
         } else {
+            intentos--;
+            console.log('Te quedan ' + intentos + ' intentos. Por favor ingresa la contraseña correcta')
+            if (intentos==0){
+                
+                console.log('El sistema queda bloqueado.')
+               
+            }
             
-            console.log('El sistema queda bloqueado.')
         }
     }
 
